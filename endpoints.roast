@@ -1,0 +1,31 @@
+
+# obtener todas las tasks
+GET http://localhost:8000/tasks/api/v1/tasks 
+Content-type: application/json
+
+# obtener una task
+GET http://localhost:8000/tasks/api/v1/tasks/1
+Content-type: application/json
+
+# crear una task
+Content-type: application/json 
+POST http://localhost:8000/tasks/api/v1/tasks/ << raw
+{
+    "title": "Eat",
+    "description": "go to the supermarket and buy some food",
+    "done": false
+}
+raw
+
+# actualizar una task
+Content-type: application/json
+PUT http://localhost:8000/tasks/api/v1/tasks/1/ << raw
+{
+    "title": "Read",
+    "description": "Read a book",
+    "done": true
+}
+raw
+
+# eliminar una task
+DELETE http://localhost:8000/tasks/api/v1/tasks/3
